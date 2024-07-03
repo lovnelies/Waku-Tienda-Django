@@ -1,0 +1,15 @@
+#scrollToTopButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    z-index: 100; 
+}
+
+#scrollToTopButton h2{
+    margin: 2px;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bolder;
+    transform: translateY(-5px);
+}

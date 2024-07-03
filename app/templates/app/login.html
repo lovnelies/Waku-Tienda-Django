@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Login{% endblock %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block content %}
+    <div class="center-div full-height">
+        <h2>Inicia Sesión</h2>
+        <form method="post" action="{% url 'app:try_login' %}" class="center-div full-width">
+            {% csrf_token %}
+            <br>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+
+            <button class="st-button" type="submit">Login</button>
+            <br>
+        </form>
+    </div>
+    <p class="center-div">¿No tienes una cuenta? <a href="{% url 'app:signup' %}">Regístrate aquí</a></p>
+{% endblock content %}

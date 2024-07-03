@@ -1,0 +1,111 @@
+body {
+    background-color: #1d1d1d;
+    display: flex;
+    min-height: 100vh;
+}
+
+#body-content{
+    width: 100%;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.white-text {
+    color: white;
+    text-decoration: none; 
+}
+.white-text:hover {
+    color: rgb(182, 182, 182);
+    text-decoration: none; 
+}
+
+footer {
+    width: 100%;
+    background-color: #2c2c2c;
+    padding: 1em;
+}
+
+li, h2, p, h4, h5, h6, h1, .error-message, th, td, label {
+    color: white;
+    font-family: 'PT Sans', sans-serif;
+}
+
+#content {
+    display:flex;
+    flex-direction: column;
+    min-height: 81.5vh;
+    justify-content: center;
+}
+
+.manga-week {
+    height: 300px;
+    width: auto; 
+    display: block; 
+    object-fit: cover;
+}
+
+.manga-info {
+    max-width: 80%;
+}
+
+.center-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.horizontal-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 5px; 
+    gap: 10px;
+}
+
+.build-form ul, p, label{
+    min-width: 70%;
+}
+
+.build-form textarea{
+    min-width: 100%;
+}
+
+.full-height{
+    height: 100%;
+}
+
+.full-width{
+    width: 90%;
+}
+
+.st-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #3498db;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.st-button:hover {
+    background-color: #ffffff;
+    color: #3498db;
+}
+
+input, label, .st-button{
+    width: 100%;
+    border-radius: 5px;
+}
+
+input{
+    height: 40px;
+}

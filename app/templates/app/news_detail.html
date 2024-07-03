@@ -1,0 +1,30 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}{{ news_item.title }}{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'styles/news_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="center-div">
+        <br/>
+        <h1 style="max-width: 80%;">{{ news_item.title }}</h1>
+        <br/>
+        <img src="{{ news_item.image.url }}" alt="{{ news_item.title }}" style="object-fit: cover;" width="80%" height="300">
+        <br/>
+        <p>{{ news_item.content|linebreaksbr }}</p>
+        <br/>
+        {% if user.is_staff %}
+        <div class="horizontal-div">
+            <form method="get" action="{% url 'app:news_update' pk=news_item.pk %}">
+                <button type="submit" class="st-button">Editar</button>
+            </form>
+            <form method="post" action="{% url 'app:news_delete' pk=news_item.pk %}">
+                {% csrf_token %}
+                <button class="st-button" type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar esta noticia?')">Eliminar Noticia</button>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}

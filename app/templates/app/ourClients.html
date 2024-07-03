@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Nuestros Proveedores{% endblock %}
+
+{% block extra_css %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="center-div">
+        <h2>Nuestros Proveedores</h2>
+        <div class="center row">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Avatar</th>
+                        <th>Name</th>
+                        <th>Website</th>
+                        <th>Editorial</th>
+                    </tr>
+                </thead>
+                <tbody id="answerTable">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="{% static 'js/apiHandler.js' %}" defer></script>
+{% endblock content %}

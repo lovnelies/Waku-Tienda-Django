@@ -1,0 +1,30 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Acerca de Nosotros{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'styles/about.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section id="mision-vision" class="center-div">
+        
+        <br>
+        <h2>Misión</h2>
+        <p>Nuestra misión en Waku Tienda es proporcionar a los amantes del manga un espacio donde puedan acceder y comprar a una amplia variedad de mangas.</p>
+
+        <h2>Visión</h2>
+        <p>Queremos ser el destino preferido para aquellos que buscan descubrir nuevos mangas y disfrutar de sus series favoritas.</p>
+    </section>
+
+    <section id="objetivos-informacion" class="center-div">
+        <h2>Objetivos de la Organización</h2>
+        <ul>
+            <li>Proporcionar gran acceso a mangas de alta calidad.</li>
+            <li>Fomentar la interacción y participación de la comunidad de lectores.</li>
+        </ul>
+
+        <h2>Información Adicional</h2>
+        <p>Esta es una plataforma en línea comprometida con el amor por el manga. Te deseamos una grata y agradable experiencia.</p>
+    </section>
+{% endblock content %}

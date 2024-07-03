@@ -1,0 +1,75 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'styles/carousel.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+      {% for news_item in latest_news|slice:":5" %}
+          <li data-target="#demo" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+      {% endfor %}
+  </ul>
+  <div class="carousel-inner">
+      {% for news_item in latest_news|slice:":5" %}
+          <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <img src="{{ news_item.image.url }}" alt="{{ news_item.title }}" width="1100" height="500">
+              <div class="carousel-caption">
+                  <h3>{{ news_item.title }}</h3>
+                  <p>{{ news_item.content|slice:":100" }}...</p>
+              </div>
+          </div>
+      {% endfor %}
+  </div>
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+<div class="center-div">
+  <section>
+    <h2 class="center">Últimos mangas añadidos</h2>
+    <ul>
+      <li> <a href="#" class="text-white">Kentaro Miura: Berserk ベルセルク TOMO 3 </a></li>
+      <li><a href="#" class="text-white">Takehiko Inoue: Vagabond バガボンド TOMO 1</a></li>
+      <li><a href="#" class="text-white">Hiroya Oku: Gantz ガンツ MUCHOS TOMOS</a></li>
+    </ul>
+  </section>
+
+  <section class="center-div">
+    <h2 class="text-center">Manga de la Semana<br>Oyasumi Punpun</h2>
+
+    <div class="manga-info">
+      <img src="{% static 'image/weekManga/Oyasumi_ini.jpg' %}" alt="Oyasumi Punpun Inicio"
+        class="manga-week img-fluid mx-auto d-block">
+      <br>
+      <p class="center">
+        "Oyasumi Punpun" es una obra maestra del mangaka Inio Asano. La historia sigue la vida de Punpun
+        Punyama, un joven con una representación de pájaro, mientras enfrenta los desafíos de la vida, el
+        amor y la pérdida.
+      </p>
+    </div>
+
+    <div class="manga-info">
+      <p class="center">
+        Con una narrativa única y a menudo desgarradora, "Oyasumi Punpun" explora temas profundos y oscuros
+        de la condición humana. Asano crea una experiencia emotiva que deja una marca duradera en los
+        lectores.
+      </p>
+      <br>
+      <img src="{% static 'image/weekManga/oyasumi_end.webp' %}" alt="Oyasumi Punpun Final"
+        class="manga-week img-fluid mx-auto d-block">
+      <br>
+    </div>
+  </section>
+
+</div>
+
+{% endblock content %}
